@@ -1,0 +1,629 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage,url,amssymb,epsfig,color,xspace,amsmath}
+\usepackage{graphicx}
+\usepackage{biblatex}
+\setlength{\bibhang}{11pt}
+\usepackage{bbm}
+\usepackage{slashbox}
+\usepackage[]{algorithm2e}
+\usepackage{pgfplots} % bar graphs
+\usepackage{setspace}
+\usepackage{tikz} %draw fancy pictures
+\usepackage{verbatim}
+\usetikzlibrary{calc,matrix}
+\usepackage{caption}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{enumitem}
+\setlist{noitemsep} %set line separation of items to zero
+\setlength\parindent{0pt} %no automatic indentation for new paragraph
+\usetikzlibrary{arrows,shapes}
+\usepackage{hyperref}
+\usetikzlibrary{calc}
+\setlength\parindent{0pt}
+\usetikzlibrary{shapes.geometric}
+\pgfplotsset{width=10cm,compat=1.8}
+\newcommand{\pmtn}{\text{pmtn}}
+\newcommand{\Note}{\paragraph{Note:}}
+\newcommand{\Definition}{\paragraph{Definition}}
+\newcommand{\Question}{\paragraph{Question}}
+\newcommand{\Example}{\paragraph{Example}}
+\newcommand{\Problem}{\paragraph{Problem}}
+\newcommand{\Theorem}{\paragraph{Theorem}}
+\newcommand{\tabfour}{\hspace*{100pt}}
+\newcommand{\tabthree}{\hspace*{75pt}}
+\newcommand{\tabtwo}{\hspace*{50pt}}
+\newcommand{\tab}{\hspace*{25pt}}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\Ra}{\Rightarrow}
+\newcommand{\la}{\leftarrow}
+\hypersetup{
+	colorlinks=false, %set true if you want colored links
+	linktoc=all,     %set to all if you want both sections and subsections linked
+	linkcolor=blue,  %choose some color if you want links to stand out
+}
+\begin{document}
+	\thispagestyle{empty}
+	\setcounter{page}{1}
+	\begin{center}
+		\vspace*{3cm}	
+		\textbf{\LARGE John Forbes Nash - First Edition}\\
+		\vspace{5pt}
+		\large Michael Ryan Blair, Xin Ye Liu, Mohammed Tahir Zaman, Brandon Yeh\\
+		\vspace{5pt}
+		CO480 - Spring 2015\\
+	\end{center}
+	
+	\newpage
+	
+	\tableofcontents
+	\pagenumbering{roman}
+	\newpage
+	\pagenumbering{arabic}
+	\singlespacing
+
+\section{America through World War II, Cold War, and Civil Rights Eras}
+
+\subsection{Middle of the 20th Century}
+
+The years of 1940-1960 were perhaps the most volatile of any twenty-year span in modern history. International borders were drawn and redrawn, political ideologies were accepted and rejected, and two wars whose impact was felt across the world were waged. While the United States had maintained an ideological stance leaning towards isolationism until this point, this period saw their emergence onto the international stage in a much more permanent way. It was during these years of conflict that John Forbes Nash Jr. produced some of his best work, making contributions to the field of game theory that would change decision-making across multiple industries for centuries to come. 
+
+\subsection{End of the Second World War}
+
+1945 marked the end of the most devastating war in history. However, two very significant events happened in this year: the use and subsequent dialogue surrounding nuclear weapons, and the creation of the United Nations.\\
+
+While the German Third Reich had been all but defeated by the end of April 1945\cite{1}, the war still raged on in the Pacific Theatre. Since the bombing of Pearl Harbour in 1941, the United States had been drawn into war with the Empire of Japan\cite{2}. The intense fighting on the island nation had claimed countless lives, and unless Japan surrendered, the United States was set to lose significantly more troops.\\
+
+Following the defeat of Germany, the leaders of the Allies met at Potsdam. It was at this conference that they reiterated their agreements on the division of Germany\cite{3}. In addition to these agreements, the Allies called for the unconditional surrender of Japan\cite{3}. While it may have been considered sensationalistic at the time, the Allies presented Japan with two options: surrender, or face “prompt and utter destruction”\cite{3}.\\
+
+When Japan did not respond to the Allies$'$ ultimatum, the destruction that had been promised was carried out as the atomic bombs Little Boy and Fat Man were dropped on the cities of Hiroshima and Nagasaki respectively\cite{4}. Combined, these bombs killed over 120,000 Japanese, including a significant number of civilians\cite{4}. These bombs effectively ended the war as the Japanese Emperor surrendered on August 14\textsuperscript{th}, 1945, a mere five days after Fat Man had been dropped on Nagasaki\cite{4}.\\
+
+The detonation of Little Boy and Fat Man did more than just end the war in the Pacific Theatre, they also illustrated to the international community the extent that scientific advancements can be weaponized. In addition to the deaths from the bombings and radiation, many subsequent births involved higher rates of brain malformation \cite{5}, and consequences of the bombing were still being felt in Nagasaki and Hiroshima years later. This extreme destruction led to the term “weapon of mass destruction” that is still in use today.\\
+ 
+While the League of Nations had failed to prevent the Second World War\cite{6}, the international community created the United Nations  in October 1945 as an arena for increased communication and centralized peacekeeping efforts\cite{7}. It was hoped that the devastation caused in Japan would limit the spread of nuclear weaponry, and the existence of the weapons. In fact, Robert Oppenheimer, the lead scientist of the Manhattan Project claimed that the existence of nuclear weaponry ``would prevent the surreptitious arming of one nation against another''\cite{8}.\\
+
+Despite the efforts of the United Nations, this was not the case, as the nations of the world became nuclear powers, but the devastation caused by the weapons, and the threat of retaliation led to the concept of mutually assured destruction, which may have prevented the Cold War from erupting into the world$'$s first nuclear conflict.
+
+\subsection{Liberalization of Trade and Rebuilding of Europe}
+
+While the Second World War ended with bombings all over Europe and Japan, the next decade symbolized a period of rebuilding, and economic success. This Golden Age of Capitalism, lasting well into the early 1970s, was characterized by the boom of industries such as chemical fertilizers, pesticides, and farming machinery\cite{9}. During this time, even the countries most devastated by the war, such as West Germany and Japan, experienced low unemployment rates, and higher productivity\cite{10}.\\
+
+Additionally, expansionary monetary policy kept nominal interest rates low, allowing businesses to borrow money at minimal cost, resulting in a boom\cite{10}. The prosperity in the economy also increased the birth rate, since families now had the financial means to have more children. This behaviour influenced the creation one of the largest cohorts in history: the Baby Boomer generation\cite{10}.\\
+
+In particular, the western European countries prospered with the help of the Marshall Plan: a US-funded aid program between 1948-1952 to help Europe rebuild \cite{11}. This program involved everything from rebuilding the physical infrastructure which was damaged or destroyed during aerial bombings, to shipping over millions of tons of food to satisfy food shortages. This was in stark contrast to the Monroe Doctrine, which characterized US foreign policy for the previous century.. It was an agreement that United States agreed not try to colonize or interfere in the affairs of Europe and Asia, while the European countries agreed to refrain from the same actions in North and South America\cite{12}. However, this program was not purely based on an injection of capital and food: it also encouraged the lowering of trade barriers, and the prevention of communism\cite{11}. For these reasons, the Soviet Union, as well as the Eastern Bloc under their control did not accept any aid from the Marshall plan\cite{11}.
+
+\subsection{Communism vs. Capitalism}
+
+From the years after the war emerged two main groups of countries in the western world. There were the North American Treaty Organization (NATO) countries, involving Canada, the United States, and most of Western Europe\cite{13}. On the other hand, the Soviet Union retained control over the countries in Eastern Europe by installing puppet governments to lead them, effectively creating an Eastern Bloc\cite{13}. In many cases, when non-communist parties were on the verge of gaining a majority vote, the Soviet Union would intervene and change the regulations to prevent independent parties from forming. In addition, print media, as well as radio and tv stations were state-owned, and heavily censored \cite{14}.\\
+
+This difference in ideology lead to a Cold War between the NATO countries, lead by the United States, and the Eastern Bloc, lead by the Soviet Union. However, since both sides had access to Weapons of Mass Destruction, neither wanted to cause a nuclear holocaust. One example of this behaviour involves the Cuban Missile Crisis. In 1962, in response to US missiles positioned in Turkey, the Soviet Union set up missile operations in Cuba\cite{15}. While the United States pondered an invasion of Cuba, President Kennedy was not in favour of this action, due to the great risks involved. Through multiple rounds of negotiations, the United States and the Soviet Union both agreed to disarm their respective missile operations\cite{15}. This is a great example of brinkmanship, where the Soviet Union pushed the United States to the brink of a disaster in order to gain the disarmament of US missiles in Turkey\cite{15}.\\
+
+Since the war could not be directly fought, the United States and Soviet Union competed in many other ways. Both countries invested human and financial capital into developing new military technologies. President Eisenhower ordered the creation of the Defence Advanced Research Policy Agency, a group specifically dedicated to weaponizing new technology\cite{16}. In many instances, they even tried to poach scientists from one nation to the other. The space race was another test of supremacy between the two nations, coinciding directly with the nuclear arms race, adding to the severity of the mutually assured destruction. When the Soviet Union first flew their Sputnik I satellite around the world, the nuclear scare and subsequent space race became much more relevant in the United States, as the Soviet Union now had the technology to launch nuclear bombs from space\cite{17}.\\
+
+The two superpowers also participated in many proxy wars: not directly between the United States and the Soviet Union, but between two countries that shared their same ideologies\cite{18}. One of the best examples of this behaviour is the Korean War. The United States fought with what is now South Korea, whereas the Soviet Union and China supported what is now the DPRK\cite{19}. While the Korean War contrasted with the Cold War in that there was significant bombing and actual combat, it too ended in a stalemate and a temporary ceasefire agreement between the two countries\cite{19}.\\
+
+The communism vs. capitalism conflict did not just occur overseas: it was also an issue within US borders. Senator Joseph McCarthy, a Republican from Wisconsin made a public accusation that many communists had infiltrated the government\cite{20}. This resulted in thousands of investigations, based on questionable evidence at best, where anyone could be jailed, detained, or interrogated. At the very least, the suspects had their reputations destroyed\cite{20}. While his accusations were wholly untrue, the nation$'$s response to them demonstrates the political tensions of the time.
+
+\subsection{The Beginning of the Civil Rights Era}
+
+The late 1940s and early 1950s set the stage for the civil rights movements personified by Martin Luther King Jr., Malcom X, and John Bevel. This time period was rife with racial discrimination in both public and private life. Black men and women were restricted in the places they could go, the jobs they could access, and even in access to public resources such as schools. While this status quo of relegating a portion of America to second class status was accepted by most of white America, seeds of change were being planted.\\
+
+In 1951, the Supreme Court agreed to hear the now famous case Brown v. Board of Education. This case challenged the precedent in Plessy v. Fergusson, and the concept of separate but equal. Prior to Brown, the United States Constitution had been interpreted in a way that allowed racial segregation in the public school system \cite{21}. Specifically, there were distinct designated schools for black and white children. While the interpretation of the Constitution implied that these schools were equal, this could not have been further from the truth. Invariably, schools for black children had fewer resources and a lower quality of education.\\
+
+In 1954 the Supreme Court delivered a landmark decision. The Court found in favour of Brown and declared that segregated school systems were inherently unequal and discriminatory. This ruling set the stage for the troubled integration of the American school system, and represented a major shift in the rights of all Americans – not just those of a certain race.\\
+
+The challenge faced by African-American was not just present in the school system. It was ingrained into every facet of life including America$'$s pastime – baseball. Since its formation in 1901, Major League Baseball has been synonymous with American culture and the dreams of young boys were filled with hitting a home run to win the World Series. That is, the dreams of young white boys. As of 1946, there had been no African-American players in MLB. In 1947, everything changed \cite{22}.\\
+
+In April 1947 Jackie Robinson became the first African-American baseball player in the major leagues. Robinson debuted with the Brooklyn Dodgers, and while he earned the respect and admiration of his teammates, Robinson was not loved by baseball. Despite having baseballs thrown at his head intentionally and being constantly bombarded by racial slurs, Jackie persevered. His focus on nonviolence and sheer talent on the baseball diamond presented a challenge to traditional racial segregation \cite{23}.\\
+
+While Robinson$'$s baseball career did not directly advance the civil rights movements, his presence and the desegregation of America$'$s pastime began to change attitudes in the minds and hearts of a number of Americans. This allowed the civil rights movement to grow and swell towards its peak in the 1960s and 70s. 
+
+\section{John Forbes Nash, Jr. \cite{24}}
+
+\subsection{Early Life}
+John Forbes Nash, Jr. was born in Bluefield, West Virginia on June 13, 1928 to John Forbes Nash and Margaret Virginia Nash. Both of his parents had differing parenting styles and this had a great impact on Johnny, as they affectionately called him.\\
+
+Before her marriage, Margaret was a schoolteacher for almost a decade. Prior to this, she studied languages and literature at Martha Washington College and later at West Virginia University. Her family placed a high importance on education and saw that all the daughters pursued higher education. This tradition continued with Margaret$'$s family as she took an active role in Johnny$'$s development and education. In particular, she used her talents in reading and teaching extensively on her son.\\
+
+Predictably, Johnny went on to attend a private kindergarten, skip a grade, and eventually fast track his college career by attending advanced classes in English, science, and math at  Bluefield College. His pastimes involved tinkering with radios and electrical gadgets, performing somewhat dangerous chemistry experiments, and above all, reading. These pursuits were almost exclusively done independently and on his terms. Though he excelled with his own pursuits, his teachers did not appreciate his independence; his early report cards indicated that he needed an ``improvement in effort, study habits and respect for rules''\cite{24}. Later, his math and science teachers in particular noted that though he would correctly complete his schoolwork, he would do it using his own, unconventional methods. As an inquisitive child, he would regularly simplify the proofs and techniques he was taught. This avant-garde nature would later on become a cornerstone for his academic career.\\
+
+Despite his strengths in academic and scientific areas, Margaret was worried about Johnny$'$s social abilities. Not surprisingly, she forced him to attend boy scouts excursions, bible classes, dance lessons, and other social activities. She also had his sister, Martha, who was a socialite, bring Johnny along to her social gatherings, arrange dates, among other activities. Johnny grudgingly attended each of these but his social manners and profile did not improve. His peers considered him eccentric and often teased Johnny. Unlike with most eccentric high school students, this reputation stuck with Johnny throughout college as well.\\
+
+Located between Norfolk, West Virginia, and Chicago, Illinois, Bluefield was an important railway town. Other prominent employers included mining and utility companies. These three industries helped attract scientific and engineering talent, which included John Nash, Sr. He had a more nuanced impact on Johnny$'$s life. For instance, after the Pearl Harbor Bombing, he taught Johnny and Martha, Johnny$'$s sister, how to use a rifle. The older Nash felt that it was inevitable that the Japanese forces would reach Bluefield, given its strategic assets with utilities, coalmines, and railway connections. More importantly, he impressed on Johnny that each of them had a unique responsibility to save the country. This mentality – having the unique responsibility of saving America from foreign forces -- was a signature of Johnny$'$s paranoid schizophrenia.
+
+\subsection{Undergraduate Studies}
+ 
+After high school, Johnny attended the Carnegie Institute of Technology, now known as Carnegie Mellon University. At the time, Carnegie was not a top-ranked school like it is today. Thanks to visionary leaders and generous corporate beneficiaries, Carnegie grew out of its humble beginnings. For instance, thanks to a generous scholarship from the Westinghouse Company, Johnny was able to attend Carnegie. Similarly, Johnny$'$s future decision regarding graduate school depended on scholarships as well.\\
+
+Just like in grade school, Johnny was not able to shed his reputation as a distant, socially inept country boy. Moreover, he was the victim of several pranks from his peers that would aggravate him. His usual response would use either his physical size (he was 6 feet 1 inch tall) or sharp tongue. Another aspect of this treatment that added to his inferiority complex was how his peers considered him unrefined and uncultured since he had never experienced concerts or symphonies before. More hurtfully, his peers did not invite him to their excursions to symphonies and other cultural events. Despite his unsavoury social reputation, his peers still revered his mathematical talents. For example, he would hold ``office hours'' where fellow students could give him math problems to solve.\\
+
+During his first semester, Johnny did not enjoy his engineering courses. In particular, poor performance in mechanical drawing caused him to change majors to chemistry. However, this discipline did not suit him either. Eventually he left chemistry as well since he felt that it had a lack of mathematical rigor and since ``[i]t was not a matter how well one could think … but how well one could handle a pipette and perform titration in the laboratory''. Likewise, working in laboratories was not enjoyable for him. For instance, during his summer internship at Westinghouse, he wasted time carefully fashioning a brass egg.\\
+
+In contrast, Johnny$'$s math professor appreciated his aptitude and his keen intuition in handling complicated math problems. Though Johnny had concerns regarding earning a living, his professors were able to convince him to pursue an academic career as a mathematician. In addition, his sponsors at Westinghouse were not pleased with him leaving engineering but eventually welcomed it. As a math student, Johnny was able to punch far above his league: he attended graduate-level classes and at times corrected professors.\\
+
+He also had a top 10 score in the Putnam math contest, which Johnny considered a personal failure since it was not a top 5 score. This sort of thinking, where a long list of accolades was meaningless in the presence of even one failure, plagued Johnny. When he was applying for graduate schools, he received offers from top four math schools in America – Harvard, Chicago, Princeton, and Michigan. Owing to his personal insecurities, he wanted to attend the prestigious Harvard, but their financial aid package was not adequate. He felt this was due to his poor performance on the Putnam contest and made him upset. Eventually, he accepted Princeton$'$s offer.
+
+\subsection{Princeton University}
+
+Though Johnny wanted to go to Harvard, in hindsight Princeton was a better fit for him. Unlike Harvard, Princeton was less bureaucratic, provided graduate students with a lot of freedom, and accordingly, Johnny was able to study several areas, including topology, algebraic geometry, logic, and some non-math areas like physics. More surprisingly, he did not attend classes or read books while at Princeton. Just like in his grade school days, Johnny discovered centuries worth of math on his own since he felt that second-hand learning would diminish the quality of his knowledge and education. Instead, he was a deep thinker and he would often ask others probing, stimulating questions to fill in his knowledge gaps. They considered him to be genuinely curious and felt that Johnny would cross-examine the most complicated problems they were facing in their research areas. For instance, in his first month at Princeton Johnny met with Albert Einstein to discuss a complicated physics problem. Later, he would do the same with John von Neumann to discuss his game theory ideas. Even though both of these men dismissed Johnny, he still persevered.\\
+
+Unfortunately, Johnny$'$s long-lasting reputation as a social outcast continued at Princeton. Though they respected his genius, his peers and the faculty did not appreciate him. For instance, one faculty member wanted to remove Johnny from Princeton by having him perform his general examinations early. Later, this same professor tried to prevent Johnny from becoming a faculty member at Princeton. Many considered Johnny unfit for Princeton, spooky, and otherwise unpleasant.\\
+
+Board games were a popular pastime with the math students at Princeton and Johnny would play often and aggressively. In particular, he would use underhanded tactics like bluffing, pretending to be defeated, and use other psychological tactics. Later on, he developed his own board game that would go on to become the Hex game marketed by Parker Brothers. Nash was particular proud since it had certain properties: (1) zero-sum, (2) two person, (3) perfect information, and (4) someone always won. More importantly, he was able to prove that the first person should always win, if they make no mistakes.\\
+
+Along with these games, an international economics class at Carnegie served as the initial motivation for Johnny$'$s landmark thesis. Johnny initially referred to von Neumann$'$s work but he felt that it had limited practical use to only zero-sum two person games and that the remaining parts were weak. Another pertinent work in this area was Edgeworth$'$s bargaining problem, where all parties knew each other and their preferences. These represented an interesting, but unsolved problem for Johnny that he solved with his thesis. Johnny initially tried showing his work to von Neumann, but he dismissed it as being trivial. Johnny showed it to David Gale who was amazed by the mathematical rigor in his proofs and felt it was worthy of a thesis. Albert Tucker, Johnny$'$s thesis advisor, agreed but requested that he include specific examples instead of a general example. This went against Johnny$'$s principles but Tucker successfully convinced him that it would allow his thesis to be more readable and understandable. 
+
+\subsection{Family Life and Schizophrenia}
+
+While Johnny was at MIT as a professor, he met Eleanor, who worked as a nurse at the local hospital. They had a brief courtship and began seeing each other exclusively. However, Johnny kept their relationship a secret from his family and colleagues. Due to his insecurities, he felt that her simple background, occupation, and accent was not becoming for a wife of an MIT professor. Later, when she was pregnant with Johnny$'$s first child, he never considered marrying her. In fact, he was an absent father for much of his life. More insultingly, he kept a relationship with MIT physics student Alicia at the same time.\\
+
+Alicia and Johnny had many similarities: they both grew up in intellectually stimulating, social-status conscious families, without significant emotional attachment. Furthermore, due to her academic aspirations he felt she was more befitting for the role of his wife. Unlike traditional courtships, she was the one who took charge and later she could not remember when Johnny proposed to her but rather remembered it as a moment of mutual understanding.\\
+
+Later on, Alicia became worried about Johnny$'$s erratic behaviour. At first, she thought that Johnny was stressed about attaining tenure at MIT or perhaps the upcoming birth of their child. When she tried to console him, Johnny did not respond in kind. Rather, he kept asking her if she knew, referring to his clandestine secret intelligence missions. His behaviour did not improve, and slowly Alicia began to retreat from social life in order to preserve Johnny$'$s reputation. Protecting and helping Johnny was a constant in her life during Johnny$'$s lost years.\\
+
+Eventually, she had Johnny involuntarily committed to the McLean Hospital, the first of many visits. As part of his treatment, the hospital promoted social contact and many of his colleagues visited him. After a fifty-day stint, he was released but he promptly went to Europe, where he repeatedly tried to seek asylum and renounce his citizenship. After multiple unsuccessful attempts in multiple countries, he was forced to return to America.\\
+
+After his return, Alicia tried to help Johnny’s condition to no avail. For instance, she sent their son to live with her mom and found him research positions. This took a toll on her and she divorced him in 1963. Many decades later, after it appeared Johnny was in a stable state, they remarried.
+
+\subsection{Later Years}
+
+In 1994, John Nash shared the Nobel Prize in Economic Sciences with Professor John Harsanyi from the University of California, Berkeley, as well as Dr. Reinhard Selten from Germany, for their work on equilibria in the theory for non-cooperative games \cite{25}. Specifically, Nash was recognized for the work from his doctorate thesis: the distinction of cooperative from non-cooperative games. He was also celebrated for having pioneered the idea of both pure and mixed equilibria within non-cooperative games\cite{25}. The other two Nobel Laureates used his work as a foundation for their research in the years following his thesis.
+
+	\section{Equilibria in Strategic Games\cite{28}}
+
+	\subsection{Introduction to Game Theory \& Strategic Games}
+	The creation of the field of Game Theory is largely attributed to John von Neumann and Oskar Morgenstern who fully introduced the concepts of cooperative games and 2-player zero-sum games in their paper \cite{26} . This exposition was published in 1944 and built on works published by the two authors dating back to 1928 \cite{27}. This work provided a new approach to a number of problems in economics. \\
+	
+	Since this early work, the field of Game Theory has exploded. Game Theory has is used to study and explain phenomena not only in economics, but also in military tactics, biology, and in real-world corporate business decisions (e.g. Mergers \& Acquisitions, pricing decisions, supplier negotiations).
+	
+	\subsection{Strategic Games}
+	
+	We first define the class of games that Nash, and subsequently this paper will study. For the purposes of this paper, strategic games are games with N players, each of which has a finite number of pure strategies. This induces the following notation and definitions.
+	
+	\subsubsection{Definitions \& Notation}
+	
+	\Definition A strategic game with $N$ players has \textbf{player set} $\{1,...,n\}$ denoted by $N$\\
+	
+	Each player $i \in N$ has a finite number of pure strategies. The set of all of player i$'$s strategies is denoted as $S_i$, and an individual pure strategy is denoted as $s_i$.\\
+	
+	A strategy profile denoted $S$ is a N-tuple, where each element $i$ is a pure strategy of player $i$.\\
+	
+	The collection of all strategy profiles $S$ is denoted as $\mathbb{S}$. We have then 
+	\begin{equation*}
+	\mathbb{S} = S_1 \times S_2 \times \cdots \times S_n
+	\end{equation*} where $\times$ represents the Cartesian product of sets.\\
+	
+	We also define the following utility/payoff functions.
+	
+	\begin{equation*}
+	\forall i, u_i : \mathbb{S} \Rightarrow \mathbb{R}
+	\end{equation*}
+	
+	Each of the $u_i$ takes in a strategy profile and returns the utility value that the player receives under the strategy profile $S$. That is, if each player $i$ plays the strategy $s_i$ in S, the player $i$ will receive a payoff of $u_i(S)$
+	
+	\Note The specific payoff amount may have no meaning in a strategic game. The only claim is that a player prefers a higher payoff to a smaller payoff. We cannot, however, say that a player prefers a payoff of 2, twice as much as a payoff of 1.\\
+	
+	We also introduce the following substitution notation:\\
+	
+	Suppose $S = (s_1,...,s_n)$. Then the strategy profile $(S_{-i},s_i') = (s_i,...,s_{-1},s_i',s_{i+1},...,s_n)$. In words, $(S_{-1},s_i')$ is the strategy profile obtained from S when player $i$ changes their strategy from $s_i$ to $s_i'$\\
+	
+	\subsubsection{How are Strategic Games Played?}
+	In strategic games each player moves simultaneously. That is, each player selects a strategy at the same time, and each players$'$ strategy selection is independent of the strategies chosen by the other players. Each player then receives payoff $u_i(S)$ based on the actions of each player.\\
+	
+	We make two key assumptions when playing strategic games:
+	\begin{enumerate}
+		\item Each player is a rational actor with the single goal of maximizing their own utility, meaning that a player will always choose the action that, given the other player$'$s strategies - will yield the highest payoff.\\
+		
+		\item We assume that players have played these games extensively in the past. It is assumed that this has led each player to form beliefs about how their opponents will play the game. This assumption is applied to each player, and it is assumed that all such beliefs are consistent.
+	\end{enumerate}
+	
+	\subsubsection{Examples of Strategic Games}
+	To illustrate strategic games, two-player games are often given in matrix form. The rows correspond to each of player 1$'$s moves, and the columns correspond to player 2$'$s moves. The elements of the matrix are ordered pairs (x, y) where x and y are the payoffs to player 1 and 2 respectively. 
+	
+	\paragraph{Prisoner$'$s Dilemma\\}
+	
+Set-up: Two prisoners have been captured and are being interrogated about their involvement with a crime. Each prisoner has two options: remaining quiet (Q), or confessing (C). If both prisoners remain quiet, the police can only convict them of a minor charge. If both prisoners confess, the police will convict them of a major charge, but the sentence will be reduced because of their cooperation. If one prisoner confesses, they will go free and their accomplice will be convicted of the major offence. This situation can be modelled as the following strategic game:
+	\begin{center}
+	\begin{tikzpicture}[element/.style={minimum width=2cm,minimum height=1cm}]
+	\matrix (m) [matrix of nodes,nodes={element},column sep=-\pgflinewidth, row sep=-\pgflinewidth,]{
+		& Q  & C  \\
+		Q & |[draw]|(2,2) & |[draw]|(0,3) \\
+		C & |[draw]|(3,0) & |[draw]|(1,1) \\
+	};
+	
+	\end{tikzpicture}
+\end{center}
+
+This results in the following instances of our definitions:
+\begin{itemize}
+	\item $\mathbb{S} = \{(Q,Q),(Q,C),(C,Q),(C,C)\}$
+	\item $S_1 = S_2 = \{Q,C\}$
+	\item $u_1((Q,Q)) = 1$
+	\item $u_2((C,Q)) = 0$
+\end{itemize}
+
+	%\newpage
+
+\paragraph{Matching Pennies\\}
+
+Set-up: Two players are each holding a penny. They each choose to show either Heads (H) or Tails (T). If both players select the same side, Player 2 pays player 1 \$1. If the sides do not match, then player 1 pays player 2 \$1.
+This can be represented by the following matrix form:
+\begin{center}
+	\begin{tikzpicture}[element/.style={minimum width=2cm,minimum height=1cm}]
+	\matrix (m) [matrix of nodes,nodes={element},column sep=-\pgflinewidth, row sep=-\pgflinewidth,]{
+		& H  & T  \\
+		H & |[draw]|(1,-1) & |[draw]|(-1,1) \\
+		T & |[draw]|(-1,1) & |[draw]|(1,-1) \\
+	};
+	
+	\end{tikzpicture}
+\end{center}
+
+This results in the following instances of our definitions:
+\begin{itemize}
+	\item $\mathbb{S} = \{(H,H),(H,T),(T,H),(T,T)\}$
+	\item $S_1 = S_2 = \{H,T\}$
+	\item $u_1((H,H)) = 1$
+	\item $u_2((H,H)) = -1$
+\end{itemize}
+
+\subsection{Pure Nash Equilibria}
+
+Nash$'$s key result in game theory revolved around the concept of equilibria. In simple terms, an equilibrium point in a strategic game is a strategy profile where no player can improve their payoff by just changing their own strategy. Mathematically we write:
+
+\begin{center}
+$S \in \mathbb{S}$ is a pure Nash Equilibria if $\forall i \in N, \forall s_i'$\\
+$u_i(S) \geq u_i(S^{-i},s_i')$
+\end{center}
+
+We illustrate this concept by showing the pure Nash Equilibria in \textit{The Prisoner$'$s Dilemma }
+Recall the matrix form of this game:
+\begin{center}
+	\begin{tikzpicture}[element/.style={minimum width=2cm,minimum height=1cm}]
+	\matrix (m) [matrix of nodes,nodes={element},column sep=-\pgflinewidth, row sep=-\pgflinewidth,]{
+		& Q  & C  \\
+		Q & |[draw]|(2,2) & |[draw]|(0,3) \\
+		C & |[draw]|(3,0) & |[draw]|(1,1) \\
+	};
+	
+	\end{tikzpicture}
+\end{center}
+
+Claim: The pure strategy profile (C,C) is a pure Nash Equilibrium.
+
+\begin{proof}
+Player 1$'$s current payoff is 2. Given that player 2 is playing pure strategy C, player 1 can only change the strategy profile to (Q,C). However, this would yield payoff of 0 for player 1 which is suboptimal. Thus, player 1 has no incentive to change their strategy. A similar argument can be made for player 2.
+It is a simple exercise for the reader to check that S = (C,C) is the only pure Nash Equilibrium in this game.
+
+\end{proof}
+
+The Prisoner$'$s Dilemma is a small 2-player game, but how can we check whether a strategy profile is a pure Nash Equilibrium in a larger game. To do this we introduce the concept of best response functions.\\
+
+The idea is given the moves of the other players, what strategy will maximize player i$'$s utility.
+
+\Definition Best Response Function: 
+\begin{center}
+	$B_i:\mathbb{S}_{-i} \Rightarrow S_i$\\
+	$B_i(S_{-i}) = \{s_i \in S_i | u_i(S_{-i},s_i) \geq u_i(S_{-i},s_i') \forall s_i' \in S_i\}$
+\end{center}
+
+We can now use the best response function to prove the following theorem.
+
+\paragraph{Theorem 1} $S^* = (s^*_1, ... , s^*_n)$ is a pure Nash Equilibrium iff $s^*_i \in B_i(S^*_{-i}) \forall i \in N$
+
+\begin{proof}
+$S^*$ is a pure Nash Equilibrium iff $\forall i u_i(S^*) >= u_i(S^*_{-i}, s_i')$ $\forall s_i' \in S_i$. iff $s^*_{-i} \in B_i(S^*_{-i})$.
+\end{proof}
+
+Using Theorem 1, we can check for pure Nash Equilibirum using best response functions. This can be done by computing the best response function value for each player for each combination of their opponent$'$s strategies. In a two player game, a Nash Equilibrium will just be the strategy profiles $S = (s_1, s_2)$ where $s_1 \in B_1(s_2)$ and $s_2 \in B_2(s_1)$. We illustrate this with an example.
+
+Consider the following game:
+
+\begin{center}
+	\begin{tikzpicture}[element/.style={minimum width=2cm,minimum height=1cm}]
+	\matrix (m) [matrix of nodes,nodes={element},column sep=-\pgflinewidth, row sep=-\pgflinewidth,]{
+		& L & C  & R  \\
+		T & |[draw]|(1,2) & |[draw]|(2,1) & |[draw]| (1,0) \\
+		M & |[draw]|(2,1) & |[draw]|(0,1) & |[draw]| (0,0) \\
+		B & |[draw]|(0,1) & |[draw]| (0,0) & |[draw]| (1,2)\\
+	};
+	
+	\end{tikzpicture}
+\end{center}
+
+We compute the best response functions in each case:
+\begin{itemize}
+	\item $B_1(L) = \{M\}$
+	\item $B_1(C) = \{T\}$
+	\item $B_1(R) = \{T,B\}$
+	\item $B_2(T) = \{L\}$
+	\item $B_2(M) = \{L,C\}$
+	\item $B_2(B) = \{R\}$
+\end{itemize}
+
+It is then easy to check that $S = (M,L)$ and $S' = (B,R)$ are pure Nash Equilibria as they satisfy the requirements for Theorem 1.\\
+
+To this point we have only considered pure Nash Equilibria. The key question is whether or not all games have such an equilibrium point. The answer in this case is no.\\
+
+Consider again the Matching Pennies game\\
+
+\begin{center}
+	\begin{tikzpicture}[element/.style={minimum width=2cm,minimum height=1cm}]
+	\matrix (m) [matrix of nodes,nodes={element},column sep=-\pgflinewidth, row sep=-\pgflinewidth,]{
+		& H  & T  \\
+		H & |[draw]|(1,-1) & |[draw]|(-1,1) \\
+		T & |[draw]|(-1,1) & |[draw]|(1,-1) \\
+	};
+	
+	\end{tikzpicture}
+\end{center}
+It is easy to see that there are no pure Nash Equilibria. If the pennies currently match, then Player 2 could change their strategy so that the pennies do not match, increasing their payoff from -1 to 1. Similarly, if the pennies do not match, player 1 can change their strategy which results in an increase of their payoff from -1 to 1. 
+
+\subsection{Mixed Strategies}
+
+As illustrated above, not all games have pure Nash Equilibria. However, we will show that all games contain an equilibrium point when we allow mixed strategies. First, we introduce the concept of mixed strategies, mixed Nash Equilibrium, and the accompanying notation.
+
+\Definition $x^i$ is a \textbf{mixed strategy} of player $i$ which represents a probability distribution over $S_i$. We define the elements of $x^i$ as $x^i_{s_i}$ which represents the probability assigned to pure strategy $s_i$. These elements are defined for all $s_i$ in $S_i$.\\
+
+Consistent with a probability distribution we have the following constraints on $x^i$:
+
+\paragraph{Constraint 1:} $x^i_{s_i} \geq 0 \forall s_i \in S_i$
+
+\paragraph{Constraint 2:} $\sum\limits_{s_i \in S_i} x^i_{s_i} = 1$\\
+Compactly we write, $x^i \in \mathbb{R}^{|s_i|}_+$ with $\mathbbm{1}^T x^i = 1$\\
+
+A pure strategy $s_i$ is simply the mixed strategy where:
+\begin{equation*}
+	x^i_{s_i} = 1 \text{ and }  x^i_{s'_i} = 0 | s'_i \neq s_i
+\end{equation*}
+
+We denote a mixed strategy profile as $x = (x^1, ... , x^n)$.\\ 
+
+Our interpretation of payoff necessarily shifts to the concept of expected payoff and we overload our payoff function notation to define, in the mixed strategy framework payoff functions $u_i$ as:
+\begin{center}
+$u_i(X) = \sum\limits_{S \in \mathbb{S}} u_i(S)\prod\limits_{j \in N} x^j_{s_j}$\\
+\end{center}
+As in the pure strategy case $(x^{-i}, \bar{x}^i)$ represents the mixed strategy profile $x = (x^1, .. x^{i-1}, \bar{x}^i, x^{i+1}, ... ,x^n)$ which is the strategy profile obtained from $x$ where player $i$ has changed their strategy from $x^i$ to $\bar{x}^i$.\\
+
+Similarly, $(x^{-i}, s_i)$ is the strategy profile where player $i$ has replaced their strategy $x^i$ with pure strategy $s_i$.\\
+
+%\newpage
+The expected payoff of pure strategy $s_i$ is:
+\begin{center} $u_i(x^{-i},s_i) = \sum\limits_{s_{-i} \in \mathbb{S}_{-i}} u_i(S_{-i}, s_i) \prod\limits_{j \neq i} x^j_{S_j}$\\
+\end{center}
+
+This allows us to re-write $u_i(x)$ as:
+
+\begin{center}
+$\sum\limits_{s_i \in S_i} x^i_{s_i} u_i(x^{-i},s_i)$
+\end{center}
+We can also redefine the concepts of equilibrium points and best response function in the context of mixed strategies as follows:
+
+\Definition  x is a \textbf{mixed Nash Equilibrium} if $u_i(x) \geq u_i(x^{-i},\bar{x}^{-i})$ $\forall i \in N$, for all mixed strategies $\bar{x}^{-i}$ of player $i$.
+
+\Definition Best Response Function\\
+Given $x^{-i}$, the mixed strategies of all players $j \neq i$. $B_i(x^{-i})$ is the set of all mixed strategies of player $i$ with maximum expected payoff against $x^{-i}$\\
+
+Now, we are almost ready to prove Nash$'$s theorem that all finite strategic games have a mixed Nash Equilibrium. First, we illustrate the idea of a mixed Nash equilibrium in the game Matching Pennies.
+Recall that Matching Pennies has no pure Nash Equilibrium. We will now show that $\hat{x} = ((\frac{1}{2},\frac{1}{2}), (\frac{1}{2}, \frac{1}{2}))$ is a mixed Nash Equilibrium.
+
+\begin{center}
+	\begin{tikzpicture}[element/.style={minimum width=2cm,minimum height=1cm}]
+	\matrix (m) [matrix of nodes,nodes={element},column sep=-\pgflinewidth, row sep=-\pgflinewidth,]{
+		& H  & T  \\
+		H & |[draw]|(1,-1) & |[draw]|(-1,1) \\
+		T & |[draw]|(-1,1) & |[draw]|(1,-1) \\
+	};
+	
+	\end{tikzpicture}
+\end{center}
+
+\begin{proof}
+Let $x^1 = (\alpha, 1 - \alpha)$, $x^2 = (\frac{1}{2},\frac{1}{2})$ and $ x = (x^1,x^2)$. Then
+\begin{equation*}
+u_i(x) = \frac{\alpha}{2} - \frac{\alpha}{2} + \frac{(1-\alpha)}{2} - \frac{(1-\alpha)}{2} = 0 \tab \forall \alpha \in [0,1]
+\end{equation*} 
+
+$\therefore u_i((\frac{1}{2},\frac{1}{2}), (\frac{1}{2} \frac{1}{2})) \geq u_i(x^{-1},\bar{x}^{1}) \tab \forall \bar{x}^1$ mixed strategies of player 1.\\
+
+Similarly, Let $x^* = ((\frac{1}{2},\frac{1}{2}), (\beta,1-\beta))$ where $\beta \in [0,1]$ Then,
+\begin{equation*}
+u_i(x^*) = \frac{\beta}{2} - \frac{\beta}{2} + \frac{(1-\beta)}{2} - \frac{(1-\beta)}{2} = 0 \tab \forall \beta \in [0,1]
+\end{equation*}
+
+$\therefore u_i((\frac{1}{2},\frac{1}{2}), (\frac{1}{2}, \frac{1}{2})) \geq u_i(x^{*-2},\bar{x}^{2}) \tab \forall \bar{x}^2$ mixed strategies of player 2. So $\hat{x}$ is a mixed Nash Equilibrium.\\ 
+\end{proof}
+
+\subsection{Mixed Nash Equilibrium in Finite Strategic Games}
+
+At this point we are ready to pursue a proof of Nash$'$s theorem that all finite strategic games contain a mixed Nash equilibrium. We will follow the method Nash used in his 1950 thesis which relies on Brouwer$'$s Fixed Point Theorem, although Nash had previously published an alternate proof relying on the work of Kakutani. For clarity, we state Nash$'$s theorem below:
+
+\paragraph{Theorem 2 (Nash):} All finite strategic games contain an equilibrium point (mixed Nash Equilibrium)\\
+
+Before proving Theorem 2, we define the results from fixed point theory that the proof relies on as well as an intermediate result which will be useful in understanding the proof.
+
+\subsubsection{Definitions and Theorems from Fixed Point Theory}
+
+\Definition X is a fixed point of a function $f: D \rightarrow D \text{ if } f(x) = x$
+
+\Definition An \textbf{$n$-simplex}\cite{29} on $n+1$ vertices denoted $x^0,...,x^n$ is 
+\begin{equation*}
+x^0,...,x^n = \left \{ \sum\limits_{i=0}^n \lambda_i x^i : \forall i \in \{0,...,n\}, \lambda_i \geq 0, \sum\limits_{i = 0}^n \lambda_i = 1 \right \}
+\end{equation*}
+
+We denote a standard $n$-simplex as $\bigtriangleup_n$.
+
+\Note The pure strategies in $S_i$ define the vertices of a $|S_i – 1|$ simplex. Every mixed strategy of player $i$ is a point within the simplex. 
+
+\paragraph{Theorem 3 (Brouwer):} A continuous function $f: \bigtriangleup_m \rightarrow \bigtriangleup_m$ has a fixed point. That is, there exists $z \in \bigtriangleup_m$ such that $f(z) = z$.
+
+\Note $\mathbb{S} = S_1 \times S_2 \times \cdots \times S_n$ is a convex polytope that contains all possible mixed strategy profiles \cite{26}
+
+\subsubsection{Support Characterization}
+
+We now consider the structure of a mixed Nash Equilibrium $x = (x^1,..., x^n)$. Specifically, we look at the structure of each of the $x^i$’s.\\
+
+We say that $x^i$ uses pure strategy $s_i$ if $x^i_{s_i} > 0$. We define the support of $x^i$ to be the set of pure strategies $s_i$ that $x^i$ uses.That is, $support(x^i) = \{s_i \in S_i | x^i_{s_i} > 0\}$.\\
+ 
+Using these support sets we can characterize a mixed Nash Equilibrium using the following theorem:
+
+\paragraph{Theorem 4 (Support Characterization):}$x$ is a mixed Nash Equilibrium iff $x^i_{s_i} > 0 \text{ only if } u_i(x^{-i}, s_i) = \max\limits_{ s_i' \in S_i} u_i(x^{-i}, s_i').$
+
+\begin{proof}
+$(\Rightarrow)$ Suppose $x$ is a mixed Nash Equilibirium and for some $s_i \in S_i$, we have $x^i_{s_i} > 0$ and $u_i(x^{-i},s_i) < \max\limits_{s_i \in S_i} u_i(x^{-i},s_i')$. Suppose $u_i(x^{-i},\bar{s}_i) = \max\limits_{s_i \in S_i} u_i(x^{-i},s_i)$. Then, we can generate new mixed strategy $\bar{x}^i$ where $\bar{x}^i_{s_i} = 0$ and $\bar{x}^i_{\bar{s}_i} = s^i_{\bar{s}_i} + x^i_{s_i}$.
+
+Since we have just shifted probability mass from one pure strategy to another, $\bar{x}^i$ is a valid mixed strategy.\\
+
+Consider the new utility value:\\
+$\begin{array}{rl}
+u_i(x^{-i},\bar{x}^i) & = \underbrace{u_i(x^{-i},x^i)}_{\text{old utility value}} - x^i_s( u_i(x^{-i},s_i)) + x^i_{\bar{s}}(u_i(x^{-i},\bar{s}_i)) = \\
+& = u_i(x^{-i},x^i)+ \underbrace{x^i_{s_i}(u_i(x^{-i},\bar{s}_i) - u_i(x^{-i},s_i)}_{> 0 \text{ by assumption}})
+\end{array}$\\
+
+$\therefore$ The new utility value is strictly greater than the old value. $\therefore$ $x$ cannot be a mixed Nash Equilibrium, which is a contradiction.\\
+
+$(\Leftarrow)$ The current utility value for player $i$ is $\max\limits_{s_i \in S_i} u_i(x^{-i}, s_i)$, as the only pure strategies with $x^i_{s_i} > 0$ have maximum expected payoff.\\
+
+It is clear that
+\begin{center} $u_i(x) = \sum\limits_{s_i \in S_i} x^i_{s_i} u_i(x^{-i},s_i) \leq \max\limits_{s_i \in S_i} u_i(x^{-i},s_i) 
+\cdot \sum\limits_{s_i \in S_i } x^i_{s_i} = \max\limits_{s_i \in S_i} u_i(x^{-i},s_i)$
+
+\end{center} as $\sum\limits_{s_i \in S_i } x^i_{s_i} = 1$ by definition.\\
+
+$\therefore$ Player $i$ cannot increase their utility. $\therefore x$ is a mixed Nash Equlibrium.
+\end{proof}
+
+This immediately gives us the following Corollary.
+\paragraph{Corollary 4:} In a mixed Nash Equilibrium $x$, $u_i(x) = \max\limits_{s'_i \in S_i} u_i(x^{-i}, s_i')$.
+
+\begin{proof}
+This is easily seen from the definition of $u_i(x)$. By Theorem 4 the only non-zero terms in the sum are those of the form $x^i_{s_i} \cdot \max\limits_{s'_i \in S_i}  u_i(x^{-i}, s_i')$. By definition, the sum of these $x^i_{s_i} = 1$, and so the whole sum is equal to $\max\limits_{s'_i \in S_i}  u_i(x^{-i}, s_i')$.
+\end{proof}
+
+\subsection{Proof of Theorem 2}
+
+At this point we are finally ready to prove Theorem 2. We proceed by presenting the general idea of the proof and breaking the process down into two parts.\\
+
+\subsubsection{The Idea}
+
+The general method of this proof is to define a series of continuous linear mappings over the polytope defined by the set of mixed strategy profiles. These mapping will be designed to improve the payoff of a player if possible. However, by Brouwer$'$s Fixed Point Theorem, the mapping will contain a fixed point. Then, all that is left to show is that this fixed point is indeed a mixed Nash Equilibrium.\\
+
+The first portion of the proof will be dedicated to defining the mappings and showing that they satisfy the conditions of Brouwer$'$s Theorem. The second portion will be illustrating that such a fixed point is a mixed Nash Equilibrium.
+
+\subsubsection{The Proof\cite{26}} 
+
+Given a mixed strategy profile $x$, we define the following function:
+
+\begin{equation*}
+\Phi^i_{s_i} = \max\{ 0,u_i(x^{-i},s_i) - u_i(x))\}
+\end{equation*}
+
+Clearly $\Phi^i_{s_i}$ is non-negative and $\Phi^i_{s_i} > 0$ only if $u_i(x^{-i},s_i) - u_i(x) > 0$. That is, $\Phi^i_{s_i} > 0$ only if player $i$ could increase their utility by changing strategies from $x^i$ to $s_i$.\\
+
+$\therefore \Phi^i_{s_i} = 0$ only when $x^i$ is a best response to $x^{-i}$\\
+
+We define $f(x) = \bar{x}$ where 
+\begin{equation*}
+\bar{x}^i_{s_i} = \dfrac{x^i_{s_i} +  \Phi^i_{s_i}(x)}{1 + \sum\limits_{s_i \in S_i}  \Phi^i_{s_i}(x)}
+\end{equation*}
+
+Since $ \Phi^i_{s_i}$ is continuous so is $f$.\\
+
+We observe that the functions do not technically satisfy the conditions of the Brouwer Theorem. However, as shown by Leyton-Brown \& Shoham, Brouwer$'$s work can be extended to Corollary 5, which we state below without proof.
+
+
+\paragraph{Corollary 5:} Any continuous function $g: \prod\limits_{i \in N} \bigtriangleup_{|S_i - 1|} \longrightarrow \bigtriangleup_{|S_i -1|}$ has a fixed point\cite{29}.\\
+
+$\therefore$ by Corollary 5, $f$ has a fixed point. It is clear to see that if $\bar{x}$ is a mixed Nash Equilibrium, then $\Phi^i_{s_i} = 0 \forall s_i$ $ \forall i$, and so $\bar{x}$ is a fixed point.\\
+
+We show this as follows:\\
+
+Let $\hat{x} = f(\bar{x})$. Then,
+\begin{center} $\hat{x}^i_{s_i} = \dfrac{\bar{x}^i_{s_i} + \Phi^i_{s_i}(\bar{x})}{1 + \sum\limits_{s_i \in S_i}\Phi^i_{s_i} (\bar{x})} = \bar{x}^i_{s_i}$  $\forall i, s_i \in S_i$
+\end{center} 
+Since $\bar{x}$ is a mixed Nash Equilibrium, $\Phi_{s_i}^i (\bar{x}) = 0$ $\forall i, s_i \in S_i$. Therefore $\hat{x} = \bar{x}$\\
+
+However, we still need to show that if $\hat{x}$ is a fixed point, then $\hat{x}$ is a mixed Nash Equilibrium. This final result is shown below:\\
+
+Consider player $i$.\\
+
+Let $s_i$ be in $\text{support}(\hat{x}^i)$ such that $u_i(\hat{x}^{-i}, s_i) \leq u_i(\hat{x})$. We note that $\text{support}(\hat{x}^i)$ is non-empty as $\sum\limits_{s_i \in S_i} \hat{x}^i_{s_i} = 1$. Therefore $\hat{x}^i_{s_i} > 0$ for some $s_i \in S_i$.
+
+We now show by contradiction that there exists such an $s_i$. Assume $u_i(\hat{x}^{-i}, s_i) > u_i(\hat{x})$ $\forall s_i \in \text{support}(\hat{x})$. Let $\alpha \in \text{support}(\hat{x})$ such that $u_i(\hat{x}^{-i}, \alpha) < u_i(\hat{x}^{-i}, \beta)$ $\forall \beta \in \text{support}(\hat{x})$. Then, by definition, $u_i(\hat{x}) = \sum\limits_{s_i \in S_i} \hat{x}^i_{s_i} u_i(\hat{x}^{-i},s_i) = \sum\limits_{s_i \in \text{support}(\hat{x})} \hat{x}^i_{s_i} u_i(\hat{x}^{-i},s_i)$. The second equality sign holds as $x^i_{s_i} = 0$ $\forall  s_i \notin \text{support}(\hat{x}^i)$.
+
+By our assumption $\sum\limits_{s_i \in \text{support}(\hat{x})} \hat{x}^i_{s_i} u_i(\hat{x}^{-i},s_i) \geq (\sum\limits_{s_i \in \text{support}(\hat{x})} \hat{x}^i_{s_i})u_i(\hat{x}^{-i}, \alpha) = 1 = u_i(\hat{x}^{-i}, \alpha) > u_i(\hat{x})$ by assumption.\\
+
+But this is a contradiction and so there must exist $s_i \in \text{support}(\hat{x}^i)$ such that 
+\begin{equation*},
+u_i(\hat{x}^{-i},s_i) \leq u_i(\hat{x}_i)
+\end{equation*}
+
+Therefore $\Phi^i_{s_i}(\hat{x}) = 0$ as $u_i(\hat{x}^{-i},s_i) - u_i(\hat{x}) \leq 0$.\\
+
+Since $\hat{x}$ is a fixed point under $f$, we have 
+\begin{equation*}
+\hat{x}^i_{s_i} = (f(\hat{x}))^i_{s_i} = \dfrac{\hat{x}^i_{s_i}}{1 + \sum\limits_{s_i \in S_i} \Phi^i_{s_i}(\hat{x})}
+\end{equation*}
+ 
+For this to hold, we must have
+\begin{equation*}
+1 + \sum\limits_{s_i \in S_i} \Phi^i_{s_i}(\hat{x}) = 1
+\end{equation*}
+or equivalently,
+
+\begin{equation*}
+\sum\limits_{s_i \in S_i} \Phi^i_{s_i}(\hat{x}) = 0
+\end{equation*}
+
+Since $\Phi^i_{s_i}(\hat{x}) \geq 0$ $\forall s_i \in S_i$, we must have $\Phi^i_{s_i}(\hat{x}) = 0$ $\forall s_i \in S_i$.\\
+
+Therefore Player $i$ has no way to increase their utility. This argument works for all players $i \in N$ and therefore no player can increase their utility.
+
+$\therefore$ $\hat{x}$ is a mixed Nash Equilibrium.
+$\qed$
+
+
+\newpage
+\begin{thebibliography}{10}
+\bibitem{1} Third Reich: An Overview. (2014, June 20). Retrieved June 24, 2015, from \url{http://www.ushmm.org/wlc/en/article.php?ModuleId=10005141}
+\bibitem{2} Pearl Harbor. (n.d.). Retrieved June 15, 2015, from \url{http://www.history.com/topics/world-war-ii/pearl-harbor}
+\bibitem{3} The Potsdam Conference, 1945 - 1937–1945 - Milestones - Office of the Historian. (n.d.). Retrieved June 25, 2015, from \url{https://history.state.gov/milestones/1937-1945/potsdam-conf}
+\bibitem{4} Bombing of Hiroshima and Nagasaki. (n.d.). Retrieved June 26, 2015, from \url{http://www.history.com/topics/world-war-ii/bombing-of-hiroshima-and-nagasaki}
+\bibitem{5} Children of the Atomic Bomb. (n.d.). Retrieved June 28, 2015, from \url{http://www.aasc.ucla.edu/cab/}
+\bibitem{6} League of Nations Failures - History Learning Site. (n.d.). Retrieved June 20, 2015, from \url{http://www.historylearningsite.co.uk/modern-world-history-1918-to-1980/league-of-nations-failures/}
+\bibitem{7} The Formation of the United Nations, 1945 - 1937–1945 - Milestones - Office of the Historian. (n.d.). Retrieved June 20, 2015, from \url{https://history.state.gov/milestones/1937-1945/un}
+\bibitem{8} Pais, A., \& Crease, R. (2006). \textit{J. Robert Oppenheimer: A life}. Oxford: Oxford University Press. 
+\bibitem{9} The Postwar Fertilizer Industry Explodes. (n.d.). Retrieved June 26, 2015, from \url{http://www.livinghistoryfarm.org/farminginthe40s/crops\_04.html}
+\bibitem{10} Marglin, S. (1990). The Golden age of capitalism: Reinterpreting the postwar experience. Oxford: Clarendon Press.
+\bibitem{11} Marshall Plan. (n.d.). Retrieved June 27, 2015, from \url{http://www.history.com/topics/world-war-ii/marshall-plan}
+\bibitem{12} Monroe Doctrine, 1823 - 1801–1829 - Milestones - Office of the Historian. (n.d.). Retrieved June 29, 2015, from \url{https://history.state.gov/milestones/1801-1829/monroe}
+\bibitem{13} Formation of NATO and Warsaw Pact. (n.d.). Retrieved June 23, 2015, from \url{http://www.history.com/topics/cold-war/formation-of-nato-and-warsaw-pact}
+\bibitem{14} Kramer, M. (n.d.). Soviet Bloc. Retrieved June 22, 2015, from \url{http://press.princeton.edu/chapters/pons/s6\_9143.pdf}
+\bibitem{15} Cuban Missile Crisis. (n.d.). Retrieved June 25, 2015, from \url{http://www.history.com/topics/cold-war/cuban-missile-crisis}
+\bibitem{16} Where the Future Becomes Now. (n.d.). Retrieved June 22, 2015, from \url{http://www.darpa.mil/about-us/timeline/where-the-future-becomes-now}
+\bibitem{17} Sputnik. (n.d.). Retrieved June 27, 2015, from \url{http://history.nasa.gov/sputnik/}
+\bibitem{18} Coups and proxy wars. (2012, July 15). Retrieved June 25, 2015, from \url{http://alphahistory.com/coldwar/coups-and-proxy-wars/}
+\bibitem{19} Korean War. (n.d.). Retrieved June 13, 2015, from {http://www.history.com/topics/korean-war}
+\bibitem{20} The Cold War Museum. (n.d.). Retrieved June 27, 2015, from {http://www.coldwar.org/articles/50s/senatorjosephmccarthy.asp}
+
+%civil rights
+\bibitem{21} Patterson, J. (2001). Brown v. Board of Education a civil rights milestone and its troubled legacy. Oxford: Oxford University Press.
+\bibitem{22} Tygiel, J. (2008). Baseball's great experiment: Jackie Robinson and his legacy (25th anniversary ed.). Oxford [England: Oxford University Press.
+\bibitem{23} Rampersad, A. (1998). Jackie Robinson: A biography. New York: Ballantine Books.
+
+%person
+\bibitem{24} Nasar, S. (1998). \textit{A beautiful mind: A biography of John Forbes Nash, Jr., winner of the Nobel Prize in economics, 1994}. New York, NY: Simon \& Schuster.
+\bibitem{25} Press Release. (n.d.). Retrieved June 28, 2015, from {http://www.nobelprize.org/nobel\_prizes/economic-sciences/laureates/1994/press.html}
+
+%math
+
+\bibitem{26} Nash, John F.. \textit{Non-cooperative Games}.  Thesis.  Princeton University, 1950
+\bibitem{27} Von Neumann, John \& Morgenstern, Oskar. \textit{Theory of Games and Economic Behaviour}. Princeton University Press. 1944.
+\bibitem{28} Koenemann, \textit{CO456 - Introduction to Game Theory Course Notes}. University of Waterloo. Fall 2014.
+\bibitem{29} Shoham, Yoav \& Leyton-Brown Kevin. \textit{Multiagent Systems: Algorithmic, Game-Theoretic and Logical Foundations}. 2010.
+
+\end{thebibliography}
+\end{document}
