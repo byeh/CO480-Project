@@ -1,6 +1,7 @@
 \documentclass[12pt]{article}
 \usepackage{fullpage,url,amssymb,epsfig,color,xspace,amsmath}
 \usepackage{graphicx}
+\usepackage{bbm}
 \usepackage{slashbox}
 \usepackage[]{algorithm2e}
 \usepackage{pgfplots} % bar graphs
@@ -204,5 +205,96 @@ The idea is given the moves of the other players, what strategy will maximize pl
 	$B_i(S_{-1}) = \{s_i \in S_i | u_i(S_{-1},s_i) \geq u_i(S_{-1},s_i') \forall s_i' \in S_i\}$
 \end{center}
 
+We can now use the best response function to prove the following theorem.
 
+\paragraph{Theorem 1} $S^* = (s^*_1, ... , s^*_n)$ is a pure Nash Equilibrium iff $s^*_i \in B_i(S^*_{-i}) \forall i \in N$
+
+\begin{proof}
+$S^*$ is a pure Nash Equilibrium iff $\forall i u_i(S^*) >= u_i(S^*_{-i}, s_i')$ $\forall s_i' \in S_i$. iff $s^*_{-i} \in B_i(S^*_-i)$.
+\end{proof}
+
+Using Theorem 2 (only defined theorem 1), we can check for pure Nash Equilibirum using best response functions. This can be done by computing the best response function value for each player for each combination of their opponent’s strategies. In a two player game, a Nash Equilibrium will just be the strategy profiles $S = (s_1, s_2)$ where $s_1 \in B_1(s_2)$ and $s_2 \in B_2(s_1)$. We illustrate this with an example.
+
+Consider the following game:
+
+\begin{center}
+	\begin{tikzpicture}[element/.style={minimum width=2cm,minimum height=1cm}]
+	\matrix (m) [matrix of nodes,nodes={element},column sep=-\pgflinewidth, row sep=-\pgflinewidth,]{
+		& L & C  & R  \\
+		T & |[draw]|(1,2) & |[draw]|(2,1) & |[draw]| (1,0) \\
+		M & |[draw]|(2,1) & |[draw]|(0,1) & |[draw]| (0,0) \\
+		B & |[draw]|(0,1) & |[draw]| (0,0) & |[draw]| (1,2)\\
+	};
+	
+	\end{tikzpicture}
+\end{center}
+
+We compute the best response functions in each case:
+\begin{itemize}
+	\item $B_1(L) = \{M\}$\\
+	\item $B_1(C) = \{T\}$\\
+	\item $B_1(R) = \{T,B\}$\\
+	\item $B_2(T) = \{L\}$\\
+	\item $B_2(M) = \{L,C\}$\\
+	\item $B_2(B) = \{R\}$\\
+\end{itemize}
+
+It is then easy to check that $S = (M,L)$ and $S' = (B,R)$ are pure Nash Equilibria as they satisfy the requirements for theorem 1.\\
+
+To this point we have only considered pure Nash Equilibria. The key question is whether or not all games have such an equilibrium point. The answer in this case is no.\\
+
+Consider again the Matching Pennies game\\
+
+\begin{center}
+	\begin{tikzpicture}[element/.style={minimum width=2cm,minimum height=1cm}]
+	\matrix (m) [matrix of nodes,nodes={element},column sep=-\pgflinewidth, row sep=-\pgflinewidth,]{
+		& H  & T  \\
+		H & |[draw]|(1,-1) & |[draw]|(-1,1) \\
+		T & |[draw]|(-1,1) & |[draw]|(1,-1) \\
+	};
+	
+	\end{tikzpicture}
+\end{center}
+It is easy to see that there are no pure Nash Equilibria. If the pennies currently match, then Player 2 could change their strategy so that the pennies do not match, increasing their payoff from -1 to 1. Similarly, if the pennies do not match, player 1 can change their strategy which results in an increase of their payoff from -1 to 1. 
+
+\section{Mixed Strategies}
+
+As illustrated above, not all games have pure Nash Equilibria. However, we will show that all games contain an equilibrium point when we allow mixed strategies. First, we introduce the concept of mixed strategies, mixed Nash Equilibrium, and the accompanying notation.
+
+\Definition $x^i$ is a \textbf{mixed strategy} of player $i$ which represents a probability distribution over $S_i$. We define the elements of $x^i$ as $x^i_{s_i}$ which represents the probability assigned to pure strategy $s_i$. These elements are defined for all $s_i$ in $S_i$.\\
+
+Consistent with a probability distribution we have the following constraints on $x^i$:
+
+\paragraph{Constraint 1:} $x^i_{s_i} \geq 0 \forall s_i \in S_i$
+
+\paragraph{Constraint 2:} $\sum\limits){s_i \in S_i} x^i_{s_i} = 1$\\
+
+A pure strategy $s_i$ is simply the mixed strategy where:
+\begin{equation*}
+	X^i_{s_i} = 1 \text{and} x^i_{s'_i} = 0 | s'_i \neq s_i
+\end{equation*}
+
+We denote a mixed strategy profile as $X = (x^1, ... , x^n)$. Compactly we have,
+
+\paragraph{Constraint 3:}  $x^i \in \mathbb{R}^{|s_i|}_+$ with $\mathbbm{1}^T x^i = 1$
+
+Our interpretation of payoff necessarily shifts to the concept of expected payoff and we overload our payoff function notation to define, in the mixed strategy framework payoff functions $u_i$ as:
+
+\paragraph{Function 1:} $U_i(X) = \sum\limits_{s \in \mathbb{S}} U_i(S)\prod\limits_{j \in N} x^j_{\mathbbm{1}_j}$\\
+
+As in the pure strategy case $(x^{-i}, \bar{x}^i)$ represents the mixed strategy profile $x = (x^1, .. x^{i-1}, \bar{x}^i, x^{i+1}, ... ,x^n)$ which is the strategy profile obtained from $x$ where player $i$ has changed their strategy from $x^i$ to $\bar{x}^i$.\\
+
+Similarly, $(x^{-i}, s_i)$ is the strategy profile where player $i$ has replaced their strategy $x^i$ with pure strategy $s_i$.\\
+
+We define FUNCTION 4 as the expected payoff of pure strategy $s_i$.
+
+\paragraph{Function 4:} $U_i(x^{-i},s_i) = \sum\limits_{s_{-i} \in \mathbb{S}_{-i}} U_i(S_{-i}, s_i) \prod\limits_{j \neq i} x^j_{S_j}$\\1
+
+This allows us to re-write $U_i(x)$ as FUNCTION 5.
+
+\paragraph{Function 5:} $\sum\limits_{s_i \in S_i} x^i_{s_i} U_i(x^{-i},s_i)$
+
+We can also redefine the concepts of equilibrium points and best response function in the context of mixed strategies as follows:
+
+\paragraph{Definition 1:} X is a \textbf{Mixed Nash Equilibrium} if $U_i(x) \geq U_i(x^{-i},\bar{x}^{-i})$ $\forall i \in N$, for all mixed strategies $\bar{x}^{-i}$ of player $i$.
 \end{document}
