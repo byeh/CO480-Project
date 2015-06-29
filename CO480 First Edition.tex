@@ -164,5 +164,45 @@ This results in the following instances of our definitions:
 	\item $u_2((H,H)) = -1$
 \end{itemize}
 
+\section{Pure Nash Equilibria}
+
+Nash’s key result in game theory revolved around the concept of equilibria. In leyman’s terms, an equilibrium point in a strategic game is a strategy profile where no player can improve their payoff by just changing their own strategy. Mathematically we write:
+
+\begin{center}
+$S \in \mathbb{S}$ is a pure Nash Equilibria if $\forall i \in N, \forall s_i'$\\
+$U_i(S) \geq u_i(S_{-1},s_i')$
+\end{center}
+
+We illustrate this concept by showing the pure Nash Equilibria in \textit{The Prisoner’s Dillema }
+Recall the matrix form of this game: =
+\begin{center}
+	\begin{tikzpicture}[element/.style={minimum width=2cm,minimum height=1cm}]
+	\matrix (m) [matrix of nodes,nodes={element},column sep=-\pgflinewidth, row sep=-\pgflinewidth,]{
+		& Q  & C  \\
+		Q & |[draw]|(2,2) & |[draw]|(0,3) \\
+		C & |[draw]|(3,0) & |[draw]|(1,1) \\
+	};
+	
+	\end{tikzpicture}
+\end{center}
+
+Clain: The pure strategy profile (C,C) is a pure Nash Equilibrium.
+
+\begin{proof}
+Player 1’s current payoff is 2. Given that player 2 is playing pure strategy C, player 1 can only change the strategy profile to (Q,C). However, this would yield payoff of 0 for player 1 which is suboptimal. Thus, player 1 has no incentive to change their strategy. A similar argument can be made for player 2.
+It is a simple exercise for the reader to check that S = (C,C) is the only pure Nash Equilibrium in this game.
+
+\end{proof}
+
+The Prisoner’s Dilemma is a small 2-player game, but how can we check whether a strategy profile is a pure Nash Equilibrium in a larger game. To do this we introduce the concept of best response functions.\\
+
+The idea is given the moves of the other players, what strategy will maximize player i’s utility.
+
+\Definition Best Response Function: 
+\begin{center}
+	$B_i:\mathbb{S}_{-1} \Rightarrow S_i$\\
+	$B_i(S_{-1}) = \{s_i \in S_i | u_i(S_{-1},s_i) \geq u_i(S_{-1},s_i') \forall s_i' \in S_i\}$
+\end{center}
+
 
 \end{document}
