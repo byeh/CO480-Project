@@ -398,11 +398,66 @@ The first portion of the proof will be dedicated to defining the series of mappi
 
 Given a mixed strategy profile $x$, we define the following function:
 
-\paragraph{Function A:} $\emptyset^i_{s_i} = \max(0,u_i(x^{-i},s_i) - u_i(x))$
+\paragraph{Function A:} $\Phi^i_{s_i} = \max(0,u_i(x^{-i},s_i) - u_i(x))$
 
-Clearly $\emptyset^i_{s_i}$ is non-negative and $\emptyset^i_{s_i} > 0$ only if $u_i(x^{-i},s_i) - u_i(x) > 0$. That is, $\emptyset^i_{s_i} > 0$ only if player $i$ could increase their utility by changing strategies.\\
+Clearly $\Phi^i_{s_i}$ is non-negative and $\Phi^i_{s_i} > 0$ only if $u_i(x^{-i},s_i) - u_i(x) > 0$. That is, $\Phi^i_{s_i} > 0$ only if player $i$ could increase their utility by changing strategies.\\
 
-$\therefore \emptyset^i_{s_i} = 0$ only when $x^i$ is a best response to $x^{-i}$
+$\therefore \Phi^i_{s_i} = 0$ only when $x^i$ is a best response to $x^{-i}$\\
+
+We define $f(x) = \bar{x}$ where 
+\begin{equation*}
+\bar{x}^i_{s_i} = \dfrac{x^i_{s_i} +  \Phi^i_{s_i}(x)}{1 + \sum\limits_{s_i \in S_i}  \Phi^i_{s_i}(x)}
+\end{equation*}
+
+Since $ \Phi^i_{s_i}$ is continuous so is $f$.
+
+We observe that the functions do not technically satisfy the Hypothesis of the Brouwer Theorem. However, as shown by Leyton-Brown \& Shoham, Brouwer's theorem can be extended to Corollary 5, which we stated below without proof.
 
 
+\paragraph{Corollary 5:} Any continuous function $f: \prod\limits_{i \in N} \bigtriangleup_{|s_i|} \longrightarrow \bigtriangleup_{|s_i|}$ has a fixed point.\\
+
+$\therefore$ by Corollary 5, $f$ has a fixed point. It is clear to see that if $\bar{x}$ is a mixed Nash Equilibrium, then $\Phi^i_{s_i} = 0 \forall s_i; \forall i$, and so $\bar{x}$ is a fixed point.\\
+
+We show this as follows:\\
+
+Let $\hat{x} = f(\bar{x})$. Then $\hat{x}^i_{s_i} = \dfrac{\bar{x}^i_{s_i} + \Phi^i_{s_i}(\bar{x})}{1 + \sum\limits_{s_i \in S_i}\Phi^i_{s_i} (\bar{x})} = \bar{x}^i_{s_i}$ $\forall i, s_i \in S$. Therefore $\hat{x} = \bar{x}$\\
+
+However, we still need to show that if $\hat{x}$ is a fixed point, then $\hat{x}$ is a mixed Nash Equilibrium. This final result is shown below:\\
+
+Consider player $i$.\\
+
+Let $s_i$ be in $\text{support}(\hat{x}^i)$ such that $u_i(\hat{x}^{-i}, s_i) \leq u_i(\hat{x})$. We note that $\text{support}(\hat{x}^i)$ is non-empty as $\sum\limits_{s_i \in S_i} \hat{x}^i_{s_i} = 1$ Therefore $\hat{x}^i_{s_i} > 0$ for some $s_i \in S_i$.
+There must exist such an $s_i$. Assume there is such a $s_i$.\\
+
+We now show by contradiction that the above is true. Assume $u_i(\hat{x}^{-i}, s_i) > u_i(\hat{x})$ $\forall s_i \in \text{support}(\hat{x})$. Let $\alpha \in \text{support}(\hat{x})$ such that $u_i(\hat{x}^{-i}, \alpha) < u_i(\hat{x}^{-i}, \beta)$ $\forall \beta \in \text{support}(\hat{x})$. Then, by definition, $u_i(\hat{x}) = \sum\limits_{s_i \in S_i} \hat{x}^i_{s_i} u_i(\hat{x}^{-i},s_i) = \sum\limits_{s_i \in \text{support}(\hat{x})} \hat{x}^i_{s_i} u_i(\hat{x}^{-i},s_i)$. The second equality sign holds as $x^i_{s_i} = 0$ $\forall  s_i \notin \text{support}(\hat{x}^i)$.
+
+By our assumption $\sum\limits_{s_i \in \text{support}(\hat{x})} \hat{x}^i_{s_i} u_i(\hat{x}^{-i},s_i) \geq (\sum\limits_{s_i \in \text{support}(\hat{x})} \hat{x}^i_{s_i})u_i(\hat{x}^{-i}, \alpha) = 1 = u_i(\hat{x}^{-i}, \alpha) > u_i(\hat{x})$ by assumption.\\
+
+But this is a contradiction and so there must exist $s_i \in \text{support}(\hat{x}^i)$ such that 
+\begin{equation*},
+u_i(\hat{x}^{-i},s_i) \leq u_i(\hat{x}_i)
+\end{equation*}
+
+Therefore $\Phi^i_{s_i}(x) = 0$ as $u_i(\hat{x}^{-i},s_i) - u_i(\hat{x}) \leq 0$.
+
+Since $\hat{x}$ is a fixed point under $f$, we have 
+\begin{equation*}
+\hat{x}^i_{s_i} = (f(\hat{x}))^i_{s_i} = \dfrac{\hat{x}^i_{s_i}}{1 + \sum\limits_{s_i \in S_i} \Phi^i_{s_i}(\hat{x})}
+\end{equation*}
+ 
+For this to hold, we must have
+\begin{equation*}
+1 + \sum\limits_{s_i \in S_i} \Phi^i_{s_i}(\hat{x}) = 1
+\end{equation*}
+or equivalently,
+
+\begin{equation*}
+\sum\limits_{s_i \in S_i} \Phi^i_{s_i}(\hat{x}) = 0
+\end{equation*}
+
+Since $\Phi^i_{s_i}(\hat{x}) \geq 0$ $\forall s_i \in S_i$, we must have $\Phi^i_{s_i}(\hat{x}) = 0$ $\forall s_i \in S_i$.\\
+
+Therefore Player $i$ has no way to increase their utility. This argument works for all players $u \in N$ and therefore no player can increase their utility.
+
+$\therefore$ It must be a mixed Nash Equilibrium.
 \end{document}
