@@ -147,14 +147,6 @@ This can be represented by the following matrix form:
 	};
 	
 	\end{tikzpicture}
-	\begin{tikzpicture}[element/.style={minimum width=2cm,minimum height=1cm}]
-		\matrix (m) [matrix of nodes,nodes={element},column sep=-\pgflinewidth, row sep=-\pgflinewidth,]{
-			& Q  & C  \\
-			Q & |[draw]|(2,2) & |[draw]|(0,3) \\
-			C & |[draw]|(3,0) & |[draw]|(1,1) \\
-		};
-		
-	\end{tikzpicture}
 \end{center}
 
 This results in the following instances of our definitions:
@@ -171,7 +163,7 @@ Nash’s key result in game theory revolved around the concept of equilibria. In
 
 \begin{center}
 $S \in \mathbb{S}$ is a pure Nash Equilibria if $\forall i \in N, \forall s_i'$\\
-$U_i(S) \geq u_i(S_{-1},s_i')$
+$u_i(S) \geq u_i(S_{-1},s_i')$
 \end{center}
 
 We illustrate this concept by showing the pure Nash Equilibria in \textit{The Prisoner’s Dillema }
@@ -213,7 +205,7 @@ We can now use the best response function to prove the following theorem.
 $S^*$ is a pure Nash Equilibrium iff $\forall i u_i(S^*) >= u_i(S^*_{-i}, s_i')$ $\forall s_i' \in S_i$. iff $s^*_{-i} \in B_i(S^*_-i)$.
 \end{proof}
 
-Using Theorem 2 (only defined theorem 1), we can check for pure Nash Equilibirum using best response functions. This can be done by computing the best response function value for each player for each combination of their opponent’s strategies. In a two player game, a Nash Equilibrium will just be the strategy profiles $S = (s_1, s_2)$ where $s_1 \in B_1(s_2)$ and $s_2 \in B_2(s_1)$. We illustrate this with an example.
+Using Theorem 2 (see below), we can check for pure Nash Equilibirum using best response functions. This can be done by computing the best response function value for each player for each combination of their opponent’s strategies. In a two player game, a Nash Equilibrium will just be the strategy profiles $S = (s_1, s_2)$ where $s_1 \in B_1(s_2)$ and $s_2 \in B_2(s_1)$. We illustrate this with an example.
 
 Consider the following game:
 
@@ -231,12 +223,12 @@ Consider the following game:
 
 We compute the best response functions in each case:
 \begin{itemize}
-	\item $B_1(L) = \{M\}$\\
-	\item $B_1(C) = \{T\}$\\
-	\item $B_1(R) = \{T,B\}$\\
-	\item $B_2(T) = \{L\}$\\
-	\item $B_2(M) = \{L,C\}$\\
-	\item $B_2(B) = \{R\}$\\
+	\item $B_1(L) = \{M\}$
+	\item $B_1(C) = \{T\}$
+	\item $B_1(R) = \{T,B\}$
+	\item $B_2(T) = \{L\}$
+	\item $B_2(M) = \{L,C\}$
+	\item $B_2(B) = \{R\}$
 \end{itemize}
 
 It is then easy to check that $S = (M,L)$ and $S' = (B,R)$ are pure Nash Equilibria as they satisfy the requirements for theorem 1.\\
@@ -267,7 +259,7 @@ Consistent with a probability distribution we have the following constraints on 
 
 \paragraph{Constraint 1:} $x^i_{s_i} \geq 0 \forall s_i \in S_i$
 
-\paragraph{Constraint 2:} $\sum\limits){s_i \in S_i} x^i_{s_i} = 1$\\
+\paragraph{Constraint 2:} $\sum\limits_{s_i \in S_i} x^i_{s_i} = 1$\\
 
 A pure strategy $s_i$ is simply the mixed strategy where:
 \begin{equation*}
@@ -280,7 +272,7 @@ We denote a mixed strategy profile as $X = (x^1, ... , x^n)$. Compactly we have,
 
 Our interpretation of payoff necessarily shifts to the concept of expected payoff and we overload our payoff function notation to define, in the mixed strategy framework payoff functions $u_i$ as:
 
-\paragraph{Function 1:} $U_i(X) = \sum\limits_{s \in \mathbb{S}} U_i(S)\prod\limits_{j \in N} x^j_{\mathbbm{1}_j}$\\
+\paragraph{Function 1:} $u_i(X) = \sum\limits_{s \in \mathbb{S}} u_i(S)\prod\limits_{j \in N} x^j_{s_j}$\\
 
 As in the pure strategy case $(x^{-i}, \bar{x}^i)$ represents the mixed strategy profile $x = (x^1, .. x^{i-1}, \bar{x}^i, x^{i+1}, ... ,x^n)$ which is the strategy profile obtained from $x$ where player $i$ has changed their strategy from $x^i$ to $\bar{x}^i$.\\
 
@@ -288,13 +280,129 @@ Similarly, $(x^{-i}, s_i)$ is the strategy profile where player $i$ has replaced
 
 We define FUNCTION 4 as the expected payoff of pure strategy $s_i$.
 
-\paragraph{Function 4:} $U_i(x^{-i},s_i) = \sum\limits_{s_{-i} \in \mathbb{S}_{-i}} U_i(S_{-i}, s_i) \prod\limits_{j \neq i} x^j_{S_j}$\\1
+\paragraph{Function 4:} $u_i(x^{-i},s_i) = \sum\limits_{s_{-i} \in \mathbb{S}_{-i}} u_i(S_{-i}, s_i) \prod\limits_{j \neq i} x^j_{S_j}$\\1
 
-This allows us to re-write $U_i(x)$ as FUNCTION 5.
+This allows us to re-write $u_i(x)$ as FUNCTION 5.
 
-\paragraph{Function 5:} $\sum\limits_{s_i \in S_i} x^i_{s_i} U_i(x^{-i},s_i)$
+\paragraph{Function 5:} $\sum\limits_{s_i \in S_i} x^i_{s_i} u_i(x^{-i},s_i)$
 
 We can also redefine the concepts of equilibrium points and best response function in the context of mixed strategies as follows:
 
-\paragraph{Definition 1:} X is a \textbf{Mixed Nash Equilibrium} if $U_i(x) \geq U_i(x^{-i},\bar{x}^{-i})$ $\forall i \in N$, for all mixed strategies $\bar{x}^{-i}$ of player $i$.
+\paragraph{Definition 1:} X is a \textbf{Mixed Nash Equilibrium} if $u_i(x) \geq u_i(x^{-i},\bar{x}^{-i})$ $\forall i \in N$, for all mixed strategies $\bar{x}^{-i}$ of player $i$.
+
+\paragraph{Definition 2:} Given $x^{-i}$, the mixed strategies of all players $j \neq i$. $B_i(x^{-i})$ is the set of all mixed strategies of player $i$ with maximum expected payoff against $x^{-i}$\\
+
+Now, we are almost ready to prove Nash’s theorem that all finite strategic games have a mixed Nash Equilibrium. First, we illustrate the idea of a mixed Nash equilibrium in the game Matching Pennies.
+Recall that Matching Pennies has no pure Nash Equilibrium. We will now show that $x = ((\frac{1}{2},\frac{1}{2}), (\frac{1}{2}, \frac{1}{2}))$ is a mixed Nash Equilibrium.
+
+\begin{center}
+	\begin{tikzpicture}[element/.style={minimum width=2cm,minimum height=1cm}]
+	\matrix (m) [matrix of nodes,nodes={element},column sep=-\pgflinewidth, row sep=-\pgflinewidth,]{
+		& L & C  & R  \\
+		T & |[draw]|(1,2) & |[draw]|(2,1) & |[draw]| (1,0) \\
+		M & |[draw]|(2,1) & |[draw]|(0,1) & |[draw]| (0,0) \\
+		B & |[draw]|(0,1) & |[draw]| (0,0) & |[draw]| (1,2)\\
+	};
+	
+	\end{tikzpicture}
+\end{center}
+
+\begin{proof}
+Let $x^1 = (\alpha, 1 - \alpha)$, $x^2 = (\frac{1}{2},\frac{1}{2})$ and $ x = (x^1,x^2)$. Then
+\begin{equation*}
+u_i(X) = \frac{\alpha}{2} - \frac{\alpha}{2} + \frac{(1-\alpha)}{2} - \frac{(1-\alpha)}{2} = 0 \tab \forall \alpha \in [0,1]
+\end{equation*} 
+
+$\therefore u_i((\frac{1}{2},\frac{1}{2}), (\frac{1}{2} \frac{1}{2})) \geq u_i(x^{-1},\bar{x}^{1}) \tab \forall \bar{x}^1$ mixed strategies of player 1.\\
+
+Similarly, Let $X^* = ((\frac{1}{2},\frac{1}{2}), (\beta,1-\beta))$ where $\beta \in [0,1]$ Then,
+\begin{equation*}
+u_i(X) = \frac{\beta}{2} - \frac{\beta}{2} + \frac{(1-\beta)}{2} - \frac{(1-\beta)}{2} = 0 \tab \forall \beta \in [0,1]
+\end{equation*}
+
+$\therefore u_i((\frac{1}{2},\frac{1}{2}), (\frac{1}{2} \frac{1}{2})) \geq u_i(x^{*-2},\bar{x}^{2}) \tab \forall \bar{x}^2$ mixed strategies of player 2.\\ 
+\end{proof}
+
+\section{Existence of Nash Equilibrium in Finite Strategic Games}
+
+At this point we are ready to pursue a proof of Nash’s theorem that all finite strategic games contain a mixed Nash equilibrium. We will follow the method Nash used in his 1950 thesis which relies on Brouwer’s Fixed Point Theorem, although Nash had previously published an alternate proof relying on the work of Kakutani. For clarity, we state Nash’s theorem below as Theorem 2.
+
+\paragraph{Theorem 2 (Nash):} All finite strategic games contain an equilibrium point (mixed Nash Equilibrium)\\
+
+Before proving Theorem 2, we define the results from fixed point theory that the proof relies on as well as an intermediate result which will be useful in understanding the proof.
+
+\subsection{Definitions and Theorems from Fixed Point Theory}
+
+\Definition X is a fixed point of a function $f: D \rightarrow D \text{ if } f(x) = x$
+
+\paragraph{Definition 3:} An $n$-simplex on $n+1$ vertices denoted $x^0,...,x^n$ is 
+\begin{equation*}
+x^0,...,x^n = \left \{ \sum\limits_{i=0}^n \lambda_i x^i : \forall i \in \{0,...,n\}, \lambda_i \geq 0, \sum\limits_{i = 0}^n \lambda_i = 1 \right \}
+\end{equation*}
+
+We denote a standard $n$-simplex as $\bigtriangleup_n$.
+
+\Note Remark: The pure strategies in $S_i$ define the vertices of a $|S_i – 1|$ simplex. Every mixed strategy of player $i$ is a point within the simplex. 
+
+\paragraph{Theorem 3: Brouwer} A continuous function $f: \bigtriangleup_m \rightarrow \bigtriangleup_m$ has a fixed point. That is, there exists $z \in \bigtriangleup_m$ such that $f(z) = z$.
+
+\Note $\mathbb{S} = S_1 x S_2 x ... x S_n$ is a convex polytope that contains all possible mixed strategy profiles (Nash)
+
+\subsection{Support Characterization}
+
+We now consider the structure of a mixed Nash Equilibrium $X = (x^1,..., x^n)$. Specifically, we look at the structure of each of the $x^i$’s.\\
+
+We say that $x^i$ uses pure strategy $s_i$ if $x^i_{s_i} > 0$. We define the support of $x^i$ to be the set of pure strategies $s_i$ that$x^i$ uses.That is, $support(x^i) = {s_i \in S_i | x^i_{s_i} > 0}$. 
+Using these support sets we can characterize a mixed Nash Equilibrium using the following theorem:
+
+\paragraph{Theorem 3 (Support Characterization Theorem):}$x$ is a mixed Nash Equilibrium iff $x^i_{s_i} > 0 \text{ only if } u_i(x^{-I}, s_i) = \max u_i(x^{-I}, s_i') \text s_i' \in S_i.$
+
+\begin{proof}
+$(\Rightarrow)$ Suppose $x$ is a mixed Nash Equilibirium and for some $s_i \in S_i$, we have $x^i_{s_i} > 0$ and $u_i(x^{-i},s_i) < \max\limits_{s_i \in S_i} u_i(x^{-i},s_i')$. Suppose $u_i(x^{-i},\bar{s}_i) = \max\limits_{s_i \in S_i} u_i(x^{-i},s_i)$. Then, we can generate new mixed strategy $\bar{x}^i$ where $\bar{x}^i_{s_i} = 0$ and $\bar{x}^i_{\bar{s}_i} = s^i_{\bar{s}_i} + x^i_{s_i}$.
+
+Since we have just shifted probability mass from one pure strategy to another, $\bar{x}^i$ is a valid mixed strategy.\\
+
+Consider the new utility value:\\
+$\begin{array}{rl}
+u_i(x^{-i},\bar{x}^i) & = u_i(x^{-i},x^i) - x^i_s( u_i(x^{-i},s_i)) + x^i_{\bar{s}}(u_i(x^{-i},\bar{s}_i)) = \text{old utility value}\\
+& = u_i(x^{-i},x^i)+ x^i_{s_i}(u_i(x^{-i},\bar{s}_i) - u_i(x^{-i},s_i) > 0 \text{ by assumption}
+\end{array}$\\
+
+$\therefore$ The new utility value is strictly greater than the old value. $\therefore$ $x$ cannot be a mixed Nash Equilibrium, which is a contradiction.\\
+
+$(\Leftarrow)$ The current utility value for player $i$ is $\max\limits_{s_i \in S_i} u_i(x^{-i}, s_i)$, as the only pure strategies with $x^i_{s_i} > 0$ have maximum expected payoff.\\
+
+It is clear that $u_i(x) = \sum\limits_{s_i \in S} x^i_{s_i} u_i(x^{-i},s_i) \leq \max\limits_{s_i \in S_i} u_i(x^{-i},s_i)$ as $\sum x^i_s = 1$ by definition.\\
+
+$\therefore$ Player $i$ cannot increase their utility. $\therefore x$ is a mixed Nash Equlibrium.
+\end{proof}
+
+This immediately gives us the following Corollary.
+\paragraph{Corollary 4:} In a mixed Nash Equilibrium x, $U_i(x) = max U_i(x^-i, s_i')$ over $s'_i$ in $S_i$.
+
+\begin{proof}
+This is easily seen from the definition of $u_i(x)$. By Theorem 3 the only non-zero terms in the sum are those of the form $x^i_{s_i} * \max u_i(x^-I, s'i)$. By definition, the sum of these $x^i_{s_i} = 1$, and so the whole sum is equal to $\max u_i(x^-I, s'_i)$.
+\end{proof}
+
+\section{Proof of Theorem 2}
+
+At this point we are finally ready to prove Theorem 2. We proceed by presenting the general idea of the proof and breaking the process down into two parts.\\
+
+\subsection{The Idea}
+
+The general method of this proof is to define a series of continuous linear mappings over the polytope defined by the set of mixed strategy profiles. These mapping will be designed to improve the payoff of a player if possible. That is, at each step in the series, the payoff of one player will be increasing. However, using Brouwer’s Fixed Point Theorem, the series will reach a limit which is a fixed point. Then, all that is left to show is that this fixed point is indeed a mixed Nash Equilibrium.\\
+
+The first portion of the proof will be dedicated to defining the series of mappings and showing that they satisfy the hypothesis of Brouwer’s theorem. The second portion will be illustrating that a fixed point is a mixed Nash Equilibrium.
+
+\subsection{The Proof}
+
+Given a mixed strategy profile $x$, we define the following function:
+
+\paragraph{Function A:} $\emptyset^i_{s_i} = \max(0,u_i(x^{-i},s_i) - u_i(x))$
+
+Clearly $\emptyset^i_{s_i}$ is non-negative and $\emptyset^i_{s_i} > 0$ only if $u_i(x^{-i},s_i) - u_i(x) > 0$. That is, $\emptyset^i_{s_i} > 0$ only if player $i$ could increase their utility by changing strategies.\\
+
+$\therefore \emptyset^i_{s_i} = 0$ only when $x^i$ is a best response to $x^{-i}$
+
+
 \end{document}
