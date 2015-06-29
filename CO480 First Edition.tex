@@ -1,6 +1,7 @@
 \documentclass[12pt]{article}
 \usepackage{fullpage,url,amssymb,epsfig,color,xspace,amsmath}
 \usepackage{graphicx}
+\usepackage{biblatex}
 \usepackage{bbm}
 \usepackage{slashbox}
 \usepackage[]{algorithm2e}
@@ -63,7 +64,7 @@
 	\singlespacing
 	
 	\section{Introduction to Game Theory \& Strategic Games}
-	The creation of the field of Game Theory is largely attributed to John von Neumann and Oskar Morgenstern who fully introduced the concepts of cooperative games and 2-player zero-sum games in their paper \textit{Theory of Games and Economic Behaviour} (Nash’s Thesis). This exposition was published in 1944 and built on works published by the two authors dating back to 1928 (Theory of Games \& Economic Behaviour). This work provided a new approach to a number of problems in economics. \\
+	The creation of the field of Game Theory is largely attributed to John von Neumann and Oskar Morgenstern who fully introduced the concepts of cooperative games and 2-player zero-sum games in their paper \cite{1} . This exposition was published in 1944 and built on works published by the two authors dating back to 1928 \cite{2}. This work provided a new approach to a number of problems in economics. \\
 	
 	Since this early work, the field of Game Theory has exploded. Game Theory has is used to study and explain phenomena not only in economics, but also in military tactics, biology, and in real-world corporate business decisions (e.g. Mergers \& Acquisitions, pricing decisions, supplier negotiations).
 	
@@ -336,7 +337,7 @@ Before proving Theorem 2, we define the results from fixed point theory that the
 
 \Definition X is a fixed point of a function $f: D \rightarrow D \text{ if } f(x) = x$
 
-\Definition An \textbf{$n$-simplex} on $n+1$ vertices denoted $x^0,...,x^n$ is 
+\Definition An \textbf{$n$-simplex}\cite{4} on $n+1$ vertices denoted $x^0,...,x^n$ is 
 \begin{equation*}
 x^0,...,x^n = \left \{ \sum\limits_{i=0}^n \lambda_i x^i : \forall i \in \{0,...,n\}, \lambda_i \geq 0, \sum\limits_{i = 0}^n \lambda_i = 1 \right \}
 \end{equation*}
@@ -402,7 +403,7 @@ The general method of this proof is to define a series of continuous linear mapp
 
 The first portion of the proof will be dedicated to defining the mappings and showing that they satisfy the conditions of Brouwer's Theorem. The second portion will be illustrating that such a fixed point is a mixed Nash Equilibrium.
 
-\subsection{The Proof}
+\subsection{The Proof\cite{1}} 
 
 Given a mixed strategy profile $x$, we define the following function:
 
@@ -424,7 +425,7 @@ Since $ \Phi^i_{s_i}$ is continuous so is $f$.\\
 We observe that the functions do not technically satisfy the conditions of the Brouwer Theorem. However, as shown by Leyton-Brown \& Shoham, Brouwer's work can be extended to Corollary 5, which we state below without proof.
 
 
-\paragraph{Corollary 5:} Any continuous function $g: \prod\limits_{i \in N} \bigtriangleup_{|S_i - 1|} \longrightarrow \bigtriangleup_{|S_i -1|}$ has a fixed point.\\
+\paragraph{Corollary 5:} Any continuous function $g: \prod\limits_{i \in N} \bigtriangleup_{|S_i - 1|} \longrightarrow \bigtriangleup_{|S_i -1|}$ has a fixed point\cite{4}.\\
 
 $\therefore$ by Corollary 5, $f$ has a fixed point. It is clear to see that if $\bar{x}$ is a mixed Nash Equilibrium, then $\Phi^i_{s_i} = 0 \forall s_i$ $ \forall i$, and so $\bar{x}$ is a fixed point.\\
 
@@ -473,4 +474,13 @@ Therefore Player $i$ has no way to increase their utility. This argument works f
 
 $\therefore$ $\hat{x}$ is a mixed Nash Equilibrium.
 $\qed$
+
+\newpage
+\begin{thebibliography}{10}
+\bibitem{1} Nash, John F.. \textit{Non-cooperative Games}.  Thesis.  Princeton University, 1950
+\bibitem{2} Von Neumann, John \& Morgenstern, Oskar. \textit{Theory of Games and Economic Behaviour}. Princeton University Press. 1944.
+\bibitem{3} Koenemann, \textit{CO456 - Introduction to Game Theory Course Notes}. University of Waterloo. Fall 2014.
+\bibitem{4} Shoham, Yoav \& Leyton-Brown Kevin. \textit{Multiagent Systems: Algorithmic, Game-Theoretic and Logical Foundations}. 2010.
+
+\end{thebibliography}
 \end{document}
